@@ -1,245 +1,52 @@
 # QuizMaster 🧠
 
-A modern, production-ready React quiz application powered by the Open Trivia Database API. Test your knowledge with customizable quizzes featuring smooth animations, auto-save functionality, and comprehensive results tracking.
+Test your knowledge with fun, customizable trivia quizzes! QuizMaster is a simple quiz app that lets you challenge yourself with thousands of questions across multiple categories.
 
-![QuizMaster Preview](https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=1200&h=600&fit=crop)
+## 🎯 How to Use
 
-## ✨ Features
+### 1. **Login**
+- Enter your name to get started (no account needed!)
 
-### Core Functionality
-- **Simple Login**: No backend required - just enter your name and start
-- **Customizable Quizzes**: Choose question count, category, difficulty, and type
-- **Single Question Display**: Focus on one question at a time with auto-advance
-- **Smart Timer**: Configurable quiz timer with visual countdown
-- **Auto-Save Progress**: Resume your quiz even after closing the browser
-- **Comprehensive Results**: Detailed summary with answer review
-- **Progress Tracking**: Real-time progress bar and question counter
+### 2. **Configure Your Quiz**
+Choose your preferences:
+- **Number of Questions**: 5 to 50 questions
+- **Category**: General Knowledge, Science, History, Sports, Movies, and 20+ more
+- **Difficulty**: Easy, Medium, Hard, or Any
+- **Question Type**: Multiple Choice, True/False, or Any
+- **Timer**: Set how long you want for the entire quiz (30 seconds to 1 hour)
 
-### User Experience
-- **Smooth Animations**: Framer Motion powered transitions and feedback
-- **Instant Feedback**: Visual confirmation for correct/wrong answers
-- **Responsive Design**: Works beautifully on mobile and desktop
-- **Accessibility**: Keyboard navigation support
-- **Error Handling**: Graceful API failure handling with retry capability
+### 3. **Take the Quiz**
+- Answer one question at a time
+- Get instant feedback (correct ✅ or wrong ❌)
+- Watch the progress bar and timer
+- The quiz auto-advances to the next question after you answer
 
-### Technical Highlights
-- **TypeScript**: Full type safety
-- **localStorage Persistence**: Resume capability across sessions
-- **HTML Entity Decoding**: Properly formatted questions from API
-- **Production Ready**: Clean code, error boundaries, and comprehensive testing setup
+### 4. **View Your Results**
+- See your score and time taken
+- Review all questions with correct answers
+- Start a new quiz to try again!
 
-## 🚀 Quick Start
+## ⭐ Features
 
-### Prerequisites
-- Node.js 16+ and npm installed ([install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating))
+- **Auto-Save**: Close your browser mid-quiz? No problem! Your progress is automatically saved and you can resume where you left off
+- **Smart Timer**: Visual countdown that ends the quiz when time's up
+- **Instant Feedback**: Know immediately if you got it right or wrong
+- **Progress Tracking**: See how many questions you've completed
+- **Answer Review**: Review all questions and see what you got right or wrong
+- **Responsive**: Works perfectly on phones, tablets, and desktops
+- **No Account Needed**: Just enter your name and start playing!
+
+## 🚀 For Developers
 
 ### Installation
-
 ```bash
-# Clone the repository
-git clone <YOUR_GIT_URL>
-cd quizmaster
-
-# Install dependencies
 npm install
-
-# Start development server
 npm run dev
 ```
 
-The app will be available at `http://localhost:8080`
-
-### Build for Production
-
-```bash
-# Create optimized production build
-npm run build
-
-# Preview production build locally
-npm run preview
-```
-
-## 📁 Project Structure
-
-```
-quizmaster/
-├── src/
-│   ├── components/          # React components
-│   │   ├── ui/             # shadcn/ui components
-│   │   ├── Login.tsx       # Login screen
-│   │   ├── QuizSettings.tsx # Quiz configuration
-│   │   ├── Quiz.tsx        # Main quiz container
-│   │   ├── Question.tsx    # Single question display
-│   │   ├── Timer.tsx       # Timer component
-│   │   ├── ProgressBar.tsx # Progress indicator
-│   │   ├── Results.tsx     # Results screen
-│   │   ├── ErrorBoundary.tsx
-│   │   └── LoadingScreen.tsx
-│   ├── hooks/              # Custom React hooks
-│   │   ├── use-timer.ts    # Timer logic
-│   │   └── use-toast.ts    # Toast notifications
-│   ├── types/              # TypeScript types
-│   │   └── quiz.ts         # Quiz-related types
-│   ├── utils/              # Utility functions
-│   │   ├── api.ts          # OpenTDB API integration
-│   │   ├── decode.ts       # HTML entity decoder
-│   │   └── storage.ts      # localStorage helpers
-│   ├── pages/              # Page components
-│   │   ├── Index.tsx       # Main app logic
-│   │   └── NotFound.tsx    # 404 page
-│   ├── App.tsx             # App wrapper
-│   ├── main.tsx            # Entry point
-│   └── index.css           # Global styles & design system
-├── public/                 # Static assets
-├── index.html              # HTML template
-├── package.json            # Dependencies
-├── vite.config.ts          # Vite configuration
-├── tailwind.config.ts      # Tailwind CSS configuration
-└── tsconfig.json           # TypeScript configuration
-```
-
-## 🎨 Design System
-
-The app uses a modern, vibrant design system with:
-- **Primary Color**: Vibrant purple-blue gradient
-- **Success Color**: Bright green for correct answers
-- **Error Color**: Red for incorrect answers
-- **Smooth Animations**: Spring-based transitions
-- **Responsive Layout**: Mobile-first approach
-
-All design tokens are defined in `src/index.css` and `tailwind.config.ts`.
-
-## 🔧 Configuration
-
-### Quiz Settings
-Users can configure:
-- Number of questions (5-50)
-- Question type (Multiple Choice, True/False, Any)
-- Difficulty (Easy, Medium, Hard, Any)
-- Category (20+ categories available)
-- Timer duration (30-3600 seconds)
-
-### Environment Variables
-No environment variables required! The app uses the public OpenTDB API.
-
-## 🧪 Testing
-
-```bash
-# Run linter
-npm run lint
-
-# Type checking
-npm run type-check
-
-# Unit tests (optional - add your test framework)
-npm test
-```
-
-## 📦 Deployment
-
-### Deploy to GitHub Pages
-
-1. Update `vite.config.ts` with your repository name:
-```typescript
-export default defineConfig({
-  base: '/your-repo-name/',
-  // ... rest of config
-})
-```
-
-2. Build and deploy:
+### Build
 ```bash
 npm run build
-npm run deploy
 ```
 
-### Deploy to Vercel/Netlify
-
-Simply connect your GitHub repository and these platforms will auto-deploy on push to main branch.
-
-**Vercel**: [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
-
-**Netlify**: [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start)
-
-## 🔐 API Information
-
-This app uses the [Open Trivia Database (OpenTDB)](https://opentdb.com/) API:
-- **Endpoint**: `https://opentdb.com/api.php`
-- **Rate Limit**: 1 request per 5 seconds
-- **No API Key Required**: Free and open to use
-
-## 🎯 Future Enhancements
-
-Potential features to add:
-- [ ] Sound effects for correct/wrong answers
-- [ ] Question skip functionality (limited skips)
-- [ ] Multiplayer mode
-- [ ] Leaderboard with backend integration
-- [ ] Achievement system
-- [ ] More detailed analytics
-- [ ] Social sharing of results
-
-## 🐛 Known Issues & Troubleshooting
-
-**Issue**: Questions not loading
-- **Solution**: Check internet connection and verify OpenTDB API status
-
-**Issue**: Progress not saving
-- **Solution**: Ensure localStorage is enabled in browser
-
-**Issue**: Timer not accurate
-- **Solution**: Avoid minimizing browser tab (tabs are throttled)
-
-## 📄 License
-
-This project is open source and available under the MIT License.
-
-## 🙏 Acknowledgments
-
-- [Open Trivia Database](https://opentdb.com/) for the quiz questions API
-- [shadcn/ui](https://ui.shadcn.com/) for beautiful UI components
-- [Framer Motion](https://www.framer.com/motion/) for smooth animations
-- [Tailwind CSS](https://tailwindcss.com/) for styling
-
-## 📞 Support
-
-For issues and questions:
-1. Check existing issues on GitHub
-2. Open a new issue with detailed description
-3. Include browser console logs if applicable
-
----
-
-**Suggested Repository Name**: `quizmaster-react` or `react-quiz-app`
-
-**Example Commit History**:
-```
-1. chore: initial project setup with Vite and dependencies
-2. feat: add design system and color palette
-3. feat: implement login and quiz settings screens
-4. feat: add quiz functionality with timer and auto-advance
-5. feat: implement results screen and answer review
-6. feat: add localStorage persistence and resume capability
-7. docs: add comprehensive README and deployment instructions
-```
-
-**Final Commit Message**:
-```
-feat: complete QuizMaster quiz application
-
-- Implement full quiz flow (login → settings → quiz → results)
-- Add OpenTDB API integration with error handling
-- Implement auto-save with localStorage persistence
-- Add timer with visual countdown and auto-finish
-- Create smooth animations with Framer Motion
-- Add comprehensive results and answer review
-- Implement responsive design for mobile/desktop
-- Add TypeScript for type safety
-- Include production-ready error boundaries
-- Add comprehensive documentation
-
-Built with React 18, TypeScript, Framer Motion, and Tailwind CSS.
-Ready for production deployment.
-```
-
-Made with ❤️ by the QuizMaster team
+Powered by the [Open Trivia Database API](https://opentdb.com/) • Built with React, TypeScript & Tailwind CSS
